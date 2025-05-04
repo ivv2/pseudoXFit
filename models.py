@@ -111,6 +111,20 @@ def get_user_games(user_id):
     conn.close()
     return games
 
+def get_ranga_tabula():
+    conn = get_db("playgame.db")
+    c = conn.cursor()
+    c.execute("""
+        SELECT users.username, users.level, users.experience, COUNT(games.id) as game_count
+        FROM users
+        LEFT JOIN games ON users.id = games.user_id
+        GROUP BY users.id
+        ORDER BY game_count DESC
+    """)
+    ranga = c.fetchall()
+    conn.close()
+    return ranga
+
 # ===========================
 # ===== FITNESS TRACKER =====
 # ===========================
@@ -180,7 +194,7 @@ def get_user_stats(user_id):
     conn = get_db("fitnesstracker.db")
     c = conn.cursor()
     # Favourite sport (sport w most workouts)
-    c.execute("""SELECT sport_id, COUNT(*) as cnt 
+    c.execute("""SELECT sport_id, COUNT(*) as cnt
                  FROM workouts WHERE user_id=?
                  GROUP BY sport_id ORDER BY cnt DESC LIMIT 1""", (user_id,))
     row = c.fetchone()

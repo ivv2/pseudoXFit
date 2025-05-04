@@ -131,6 +131,13 @@ def my_games():
     games = models.get_user_games(session["user_id"])
     return render_template("games_list.html", TEXTS=TEXTS, games=games)
 
+from models import get_ranga_tabula
+
+@app.route('/rangs')
+def rangs():
+    ranga = get_ranga_tabula()
+    return render_template('rangs.html', ranga=ranga)
+
 # --- FITNESS TRACKER SECTION ---
 @app.route("/majasdarbi/fitnesstracker/")
 def fitnesstracker_main():

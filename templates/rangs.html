@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Spēlētāju ranga tabula</h2>
+<table>
+  <tr>
+    <th>Vieta</th>
+    <th>Lietotājvārds</th>
+    <th>Līmenis</th>
+    <th>Pieredzes punkti</th>
+    <th>Izspēlēto spēļu skaits</th>
+  </tr>
+  {% for ieraksts in ranga %}
+  <tr>
+    <td>{{ loop.index }}</td>
+    <td>{{ ieraksts['username'] }}</td>
+    <td>{{ ieraksts['level'] }}</td>
+    <td>{{ ieraksts['experience'] }}</td>
+    <td>{{ ieraksts['game_count'] }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Atpakaļ</a>
+{% endblock %}
