@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ TEXTS['welcome'] }}</h2>
+<a href="{{ url_for('login') }}">{{ TEXTS['login'] }}</a> |
+<a href="{{ url_for('register') }}">{{ TEXTS['register'] }}</a><br>
+    <a href="/majasdarbi/fitnesstracker/">
+        <button type="button" class="btn btn-outline-info">Atvērt Fitnesa lietotni</button>
+        </a>
+
+<div style="
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 600px;
+    height: 450px;
+    z-index: 9999;
+    box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+    border-radius: 15px;
+    overflow: hidden;
+">
+  <iframe
+    width="100%"
+    height="100%"
+    style="border:0; border-radius: 15px;"
+    allowtransparency="true"
+    allowfullscreen="true"
+    scrolling="no"
+    title="Embedded DrawSQL IFrame"
+    frameborder="0"
+    src="https://drawsql.app/teams/neocircus-advisors-team/diagrams/fitnesshubql/embed">
+  </iframe>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Jauns lietotājs</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Vārds</label>
+            <input class="form-control" type="text" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Uzvārds</label>
+            <input class="form-control" type="text" name="surname" required>
+        </div>
+        <button class="btn btn-success" type="submit">Saglabāt</button>
+        <a class="btn btn-secondary" href="/majasdarbi/fitnesstracker/"> Atpakaļ</a>
+    </form>
+{% endblock %}

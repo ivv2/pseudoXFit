@@ -1,0 +1,2 @@
+Lietotājs 1, Sports 1, Intensitāte 3, Laiks Rīta treniņš
+Lietotājs 1, Sports 1, Intensitāte 4, Laiks Rīta treniņš

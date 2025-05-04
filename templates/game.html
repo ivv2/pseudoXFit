@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ TEXTS['start_game'] }}</h2>
+  <p>{{ TEXTS['health'] }}: {{ health }}</p>
+  <p>{{ TEXTS['battle_points'] }}: {{ battle_points }}</p>
+  <form method="post" action="{{ url_for('play') }}">
+    <button type="submit" name="action" value="fight">{{ TEXTS["fight"] }}</button>
+    <button type="submit" name="action" value="run">{{ TEXTS["run"] }}</button>
+  </form>
+  <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+{% endblock %}

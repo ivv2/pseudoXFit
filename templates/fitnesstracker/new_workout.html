@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Jauns treniņš</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Lietotājs</label>
+            <select class="form-select" name="user_id" required>
+                <option value="">Izvēlies lietotāju</option>
+                {% for u in users %}
+                <option value="{{u['id']}}">{{u['name']}} {{u['surname']}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Sporta veids</label>
+            <select class="form-select" name="sport_id" required>
+                <option value="">Izvēlies sporta veidu</option>
+                {% for s in sports %}
+                <option value="{{s['id']}}">{{s['title']}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Treniņa intensitāte</label>
+            <select class="form-select" name="intensity" required>
+                {% for v in range(1, 6) %}
+                <option value="{{v}}">{{v}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Treniņa laiks</label>
+            <div>
+                <input type="radio" id="morning" name="day_time" value="Rīta treniņš" required>
+                <label for="morning">Rīta treniņš</label>
+                <input type="radio" id="evening" name="day_time" value="Vakara treniņš" required>
+                <label for="evening">Vakara treniņš</label>
+            </div>
+        </div>
+        <button class="btn btn-warning" type="submit">Saglabāt</button>
+        <a class="btn btn-secondary" href="/majasdarbi/fitnesstracker/"> Atpakaļ</a>
+    </form>
+{% endblock %}

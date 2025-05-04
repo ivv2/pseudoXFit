@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2 class="mb-4">Seko līdzi saviem treniņiem</h2>
+    <div class="row g-3">
+        <div class="col-md-4 text-center">
+            <a class="btn btn-success w-100" href="{{ url_for('new_user') }}">Jauns lietotājs</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn btn-primary w-100" href="{{ url_for('new_sport') }}">Jauns sporta veids</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn btn-warning w-100" href="{{ url_for('new_workout') }}">Jauns treniņš</a>
+        </div>
+    </div>
+    <div class="row g-3 mt-5">
+        <div class="col-md-4 text-center">
+            <a class="btn btn-outline-primary w-100" href="{{ url_for('sports_list') }}">Skatīt sporta veidus</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn btn-outline-warning w-100" href="{{ url_for('workouts_list') }}">Skatīt treniņus</a>
+        </div>
+        <div class="col-md-4 text-center">
+            <a class="btn btn-outline-success w-100" href="{{ url_for('users_list') }}">Skatīt lietotājus</a>
+        </div>
+    </div>
+{% endblock %}

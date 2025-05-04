@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Fitnesa izsekošana - izvēlne</h2>
+  <div class="mb-3">
+    <a href="{{ url_for('fit_new_user') }}" class="btn btn-success">Pievienot lietotāju</a><br>
+    <a href="{{ url_for('fit_new_sport') }}" class="btn btn-primary">Pievienot sporta veidu</a><br>
+    <a href="{{ url_for('fit_new_workout') }}" class="btn btn-warning">Pievienot treniņu</a><br>
+  </div>
+  <div class="mb-3">
+    <a href="{{ url_for('fit_sports_list') }}" class="btn btn-outline-primary">Apskatīt sporta veidus</a><br>
+    <a href="{{ url_for('fit_workouts_list') }}" class="btn btn-outline-warning">Apskatīt treniņus</a><br>
+    <a href="{{ url_for('fit_users_list') }}" class="btn btn-outline-success">Apskatīt lietotājus</a><br>
+  </div>
+  <div class="mt-4">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Atpakaļ uz galveno lapu</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{
+    "welcome": "Welcome to the pseudo rtv game!",
+    "login": "Login",
+    "register": "Register",
+    "username": "Username",
+    "password": "Password",
+    "start_game": "Start Game",
+    "my_games": "My Games",
+    "logout": "Logout",
+    "dashboard": "Player Dashboard",
+    "level": "Level",
+    "experience": "Experience",
+    "games_played": "Games Played",
+    "exp_needed": "Experience needed for next level: {points}",
+    "fight": "Fight",
+    "run": "Run",
+    "game_over": "Game Over!",
+    "you_won": "You survived! Your battle points: {battle_points}",
+    "health": "Health",
+    "battle_points": "Battle Points"
+}

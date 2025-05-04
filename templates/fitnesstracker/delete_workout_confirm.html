@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Apstiprini dzēšanu</h2>
+    <p>Vai esi pārliecināts, ka vēlies dzēst šo treniņu?</p>
+    <form method="post">
+        <button class="btn btn-danger" type="submit">Jā, dzēst</button>
+        <a class="btn btn-secondary" href="{{ url_for('workouts_list') }}">Nē, atcelt</a>
+    </form>
+{% endblock %}

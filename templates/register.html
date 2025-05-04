@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ TEXTS["register"] }}</h2>
+<form method="post">
+    <label>{{ TEXTS["username"] }}: <input type="text" name="username"></label><br>
+    <label>{{ TEXTS["password"] }}: <input type="password" name="password"></label><br>
+    <input type="submit" value="{{ TEXTS["register"] }}">
+</form>
+
+<a href="{{ url_for('login') }}">{{ TEXTS["login"] }}</a>
+{% endblock %}

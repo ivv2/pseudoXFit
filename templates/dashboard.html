@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>{{ user.username }}'s Dashboard</h2>
+
+  <ul>
+    <li><strong>{{ TEXTS['level'] }}:</strong> {{ user.level }}</li>
+    <li><strong>{{ TEXTS['experience'] }}:</strong> {{ user.experience }}</li>
+    <li><strong>{{ TEXTS['games_played'] }}:</strong> {{ user.games_count }}</li>
+    {% if user.exp_needed is not none %}
+      <li>
+        <strong>{{ TEXTS['exp_needed'].replace("{points}", user.exp_needed|string) }}</strong>
+      </li>
+    {% endif %}
+  </ul>
+
+  <p>
+    <a href="{{ url_for('start_game') }}">
+      {{ TEXTS["start_game"] }}
+    </a>
+    <br>
+    <a href="{{ url_for('my_games') }}">
+      {{ TEXTS["my_games"] }}
+    </a>
+    <br>
+    <a href="{{ url_for('logout') }}">
+      {{ TEXTS["logout"] }}
+    </a>
+  </p>
+    <div class="mt-4">
+    <a href="{{ url_for('index') }}" class="btn btn-secondary">Atpakaļ uz galveno lapu</a>
+  </div>
+{% endblock %}

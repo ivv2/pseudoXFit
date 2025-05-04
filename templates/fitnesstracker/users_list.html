@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Lietotāju saraksts</h2>
+    <table class="table table-striped">
+      <tr>
+        <th>Vārds Uzvārds</th>
+        <th>Iecienītākais sporta veids</th>
+        <th>Vidējā treniņu intensitāte</th>
+        <th>Iecienītais treniņa laiks</th>
+      </tr>
+      {% for u in userstats %}
+      <tr>
+        <td>{{ u.name }} {{ u.surname }}</td>
+        <td>{{ u.fav_sport or "Nav" }}</td>
+        <td>{{ u.avg_intensity or "Nav" }}</td>
+        <td>{{ u.fav_time or "Nav" }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a class="btn btn-secondary mt-3" href="/majasdarbi/fitnesstracker/">Atpakaļ</a>
+{% endblock %}

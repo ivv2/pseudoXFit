@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Sporta veidu saraksts</h2>
+    <ul class="list-group">
+        {% for s in sports %}
+            <li class="list-group-item">{{ s['title'] }}</li>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-secondary mt-3" href="/majasdarbi/fitnesstracker/">Atpakaļ</a>
+{% endblock %}

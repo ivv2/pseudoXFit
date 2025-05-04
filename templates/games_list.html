@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>{{ TEXTS["my_games"] }}</h2>
+  {% if games %}
+    <table border="1" cellpadding="4">
+      <tr>
+        <th>ID</th>
+        <th>{{ TEXTS["health"] }}</th>
+        <th>{{ TEXTS["battle_points"] }}</th>
+        <th>Date</th>
+      </tr>
+      {% for g in games %}
+      <tr>
+        <td>{{ g['id'] }}</td>
+        <td>{{ g['health'] }}</td>
+        <td>{{ g['battle_points'] }}</td>
+        <td>{{ g['timestamp'] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No games played yet.</p>
+  {% endif %}
+  <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+{% endblock %}
